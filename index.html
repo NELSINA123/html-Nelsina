@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NELSONA Smart Mind</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+
+    <div class="content">
+    
+
+      <p>Powered by NELSINA Intelligence — scanning your mind deeper than ever before...</p>
+      <button id="startBtn">Start Scan</button>
+    </div>
+  </section>
+
+  <!-- LOADING -->
+  <section class="loading hidden" id="loading">
+    <h2>Scanning your brain... 🧠</h2>
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    <p id="loadingText">Initializing...</p>
+  </section>
+
+  <!-- RESULT -->
+  <section class="result hidden" id="result">
+    <h2>Scan Complete ✅</h2>
+    <p id="finalMessage"></p>
+
+    <div class="btn-group">
+      <button onclick="location.reload()">Scan Again</button>
+      <button id="shareBtn">Prank a Friend 😈</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+   <footer class="site-footer">
+  <div class="footer-image">
+    <img src="./WhatsApp Image 2026-04-01 at 11.35.52 AM.jpeg" alt="My Picture">
+    <p>© 2026 NELSINA | Definitely Not Fake 😏</p>
+  </div>
+</footer>
+ 
+
+  <!-- SCRIPT -->
+  <script>
+    const startBtn = document.getElementById("startBtn");
+    const loading = document.getElementById("loading");
+    const result = document.getElementById("result");
+    const progress = document.getElementById("progress");
+    const loadingText = document.getElementById("loadingText");
+    const finalMessage = document.getElementById("finalMessage");
+    const shareBtn = document.getElementById("shareBtn");
+
+    const messages = [
+      "Reading your thoughts...",
+      "Accessing secret data...",
+      "Checking your search history 😏...",
+      "Analyzing personality...",
+      "Almost done..."
+    ];
+
+    const results = [
+      
+      "Awwww April FOOL 🤓",
+      "APRIL FOOL🤣",
+      "Certified April Fool Victim 🎉😆"
+    ];
+
+    startBtn.addEventListener("click", () => {
+      document.querySelector(".hero").style.display = "none";
+      loading.classList.remove("hidden");
+
+      let width = 0;
+      let i = 0;
+
+      const interval = setInterval(() => {
+        width += 2;
+        progress.style.width = width + "%";
+
+        if (width % 20 === 0 && i < messages.length) {
+          loadingText.innerText = messages[i];
+          i++;
+        }
+
+        if (width >= 100) {
+          clearInterval(interval);
+          loading.classList.add("hidden");
+          result.classList.remove("hidden");
+
+          const randomResult = results[Math.floor(Math.random() * results.length)];
+          finalMessage.innerText = randomResult;
+        }
+      }, 80);
+    });
+
+    shareBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(window.location.href);
+      alert("Link copied! Send it to your friend 😈");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #151516;
+  color: #fff;
+  text-align: center;
+  
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url("./WhatsApp\ Image\ 2026-04-01\ at\ 11.35.52\ AM.jpeg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+/* LOGO */
+.logo {
+  width: 260px;
+  max-width: 80%;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 15px rgba(34, 197, 94, 0.6));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* BUTTONS */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #16a34a;
+}
+
+.btn-group button {
+  margin: 10px;
+}
+
+/* LOADING */
+.loading {
+  padding: 80px 20px;
+}
+
+.progress-bar {
+  width: 80%;
+  height: 20px;
+  background: #1e293b;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  background: #22c55e;
+  transition: width 0.2s;
+}
+
+/* RESULT */
+.result {
+  padding: 80px 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* FOOTER */
+footer {
+  padding: 15px;
+  font-size: 0.9rem;
+  background: #020617;
+}
+
+.site-footer {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-image img {
+  width: 120px;        /* adjust size */
+  height: 120px;
+  border-radius: 50%;  /* makes it circular */
+  object-fit: cover;
+  border: 3px solid #fff;
+}
